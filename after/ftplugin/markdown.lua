@@ -14,5 +14,3 @@ vim.keymap.set("n", "<Up>", "gk")
 -- also in insert mode
 -- vim.keymap.set("i", "<Down>", "<C-o>gj")
 -- vim.keymap.set("i", "<Up>", "<C-o>gk")
-
-vim.cmd(':Copilot disable')
