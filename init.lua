@@ -35,3 +35,23 @@ vim.cmd('cnoreabbrev hoff nohlsearch')
 
 -- set nerd font
 vim.g.have_nerd_font = true
+
+-- ─────────────────────────────────────────────────────────────
+-- Terminal / split-navigation shortcuts
+-- Use Ctrl-h/j/k/l to move between splits from BOTH normal and
+-- terminal mode without needing <C-\><C-n> first.
+-- ─────────────────────────────────────────────────────────────
+local function t_map(lhs, rhs)
+  vim.keymap.set('t', lhs, rhs, { noremap = true, silent = true })
+end
+
+t_map('<C-h>', [[<C-\><C-n><C-w>h]])
+t_map('<C-j>', [[<C-\><C-n><C-w>j]])
+t_map('<C-k>', [[<C-\><C-n><C-w>k]])
+t_map('<C-l>', [[<C-\><C-n><C-w>l]])
+
+-- Provide identical mappings in normal mode for consistency
+vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true })
