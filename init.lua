@@ -55,3 +55,10 @@ vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true })
+
+-- Automatically resume Terminal insert mode whenever a terminal
+-- window/buffer gains focus.
+vim.api.nvim_create_autocmd({ 'BufWinEnter', 'WinEnter' }, {
+  pattern = 'term://*',
+  command = 'startinsert',
+})
