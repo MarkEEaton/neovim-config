@@ -1,12 +1,18 @@
 -- load plugins
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
-Plug 'github/copilot.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug('ms-jpq/chadtree', {branch = 'chad', ['do'] = 'python3 -m chadtree deps'})
 Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-treesitter/nvim-treesitter' -- needed to get the right version of treesitter
+Plug 'joshuavial/aider.nvim'
 vim.call('plug#end')
+
+ -- configure aider.nvim 
+ pcall(function()
+   require('aider').setup()
+ end)
 
 -- set line numbers
 vim.opt.number = true
