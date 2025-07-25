@@ -9,10 +9,13 @@ Plug 'nvim-treesitter/nvim-treesitter' -- needed to get the right version of tre
 Plug 'joshuavial/aider.nvim'
 vim.call('plug#end')
 
- -- configure aider.nvim 
- pcall(function()
-   require('aider').setup()
- end)
+-- configure aider.nvim 
+pcall(function()
+  require('aider').setup()
+end)
+
+-- aider shortcuts
+vim.api.nvim_create_user_command('Ao', 'AiderOpen', {})
 
 -- set line numbers
 vim.opt.number = true
