@@ -10,5 +10,3 @@ vim.opt.spell = true
 -- alter up and down arrows for better text navigation
 vim.keymap.set("n", "<Down>", "gj")
 vim.keymap.set("n", "<Up>", "gk")
-
-vim.cmd(':Copilot disable')
